@@ -87,6 +87,26 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				kanban: {
+					new: 'hsl(var(--kanban-new))',
+					'new-bg': 'hsl(var(--kanban-new-bg))',
+					'new-border': 'hsl(var(--kanban-new-border))',
+					contact: 'hsl(var(--kanban-contact))',
+					'contact-bg': 'hsl(var(--kanban-contact-bg))',
+					'contact-border': 'hsl(var(--kanban-contact-border))',
+					proposal: 'hsl(var(--kanban-proposal))',
+					'proposal-bg': 'hsl(var(--kanban-proposal-bg))',
+					'proposal-border': 'hsl(var(--kanban-proposal-border))',
+					negotiation: 'hsl(var(--kanban-negotiation))',
+					'negotiation-bg': 'hsl(var(--kanban-negotiation-bg))',
+					'negotiation-border': 'hsl(var(--kanban-negotiation-border))',
+					won: 'hsl(var(--kanban-won))',
+					'won-bg': 'hsl(var(--kanban-won-bg))',
+					'won-border': 'hsl(var(--kanban-won-border))',
+					lost: 'hsl(var(--kanban-lost))',
+					'lost-bg': 'hsl(var(--kanban-lost-bg))',
+					'lost-border': 'hsl(var(--kanban-lost-border))'
 				}
 			},
 			borderRadius: {

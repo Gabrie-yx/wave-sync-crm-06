@@ -67,7 +67,7 @@ export const KanbanBoard = () => {
         {
           id: 'novo-lead',
           title: 'Novos Leads',
-          color: 'bg-blue-100 border-blue-300',
+          color: 'bg-kanban-new-bg border-kanban-new-border',
           leads: [
             {
               id: '1',
@@ -96,7 +96,7 @@ export const KanbanBoard = () => {
         {
           id: 'contato-feito',
           title: 'Contato Feito',
-          color: 'bg-yellow-100 border-yellow-300',
+          color: 'bg-kanban-contact-bg border-kanban-contact-border',
           leads: [
             {
               id: '3',
@@ -115,7 +115,7 @@ export const KanbanBoard = () => {
         {
           id: 'proposta-enviada',
           title: 'Proposta Enviada',
-          color: 'bg-purple-100 border-purple-300',
+          color: 'bg-kanban-proposal-bg border-kanban-proposal-border',
           leads: [
             {
               id: '4',
@@ -133,7 +133,7 @@ export const KanbanBoard = () => {
         {
           id: 'negociacao',
           title: 'Em Negociação',
-          color: 'bg-orange-100 border-orange-300',
+          color: 'bg-kanban-negotiation-bg border-kanban-negotiation-border',
           leads: [
             {
               id: '5',
@@ -152,7 +152,7 @@ export const KanbanBoard = () => {
         {
           id: 'ganhos',
           title: 'Ganhos',
-          color: 'bg-green-100 border-green-300',
+          color: 'bg-kanban-won-bg border-kanban-won-border',
           leads: [
             {
               id: '6',
@@ -170,7 +170,7 @@ export const KanbanBoard = () => {
         {
           id: 'perdidos',
           title: 'Perdidos',
-          color: 'bg-red-100 border-red-300',
+          color: 'bg-kanban-lost-bg border-kanban-lost-border',
           leads: [
             {
               id: '7',
@@ -362,7 +362,7 @@ export const KanbanBoard = () => {
             Gerencie seus leads e oportunidades com drag and drop
           </p>
         </div>
-        <Button className="btn-crm-primary flex items-center gap-2">
+        <Button variant="default" className="flex items-center gap-2">
           <Plus className="w-4 h-4" />
           Novo Lead
         </Button>
@@ -379,7 +379,9 @@ export const KanbanBoard = () => {
                   ref={provided.innerRef}
                   className={`${column.color} rounded-lg p-4 min-h-32 ${
                     snapshot.isDraggingOver ? 'ring-2 ring-primary shadow-lg' : ''
-                  } transition-all duration-200`}
+                  } transition-all duration-200 kanban-column ${
+                    snapshot.isDraggingOver ? 'dragging-over' : ''
+                  }`}
                 >
                   {/* Header da coluna */}
                   <div className="flex items-center justify-between mb-4">

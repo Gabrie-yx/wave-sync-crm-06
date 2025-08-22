@@ -57,6 +57,31 @@
     --info-foreground: 0 0% 100%;
     --info-light: 200 98% 96%;
 
+    /* Cores específicas do Kanban - Funil de Vendas */
+    --kanban-new: 216 85% 58%;         /* azul para novos leads */
+    --kanban-new-bg: 216 100% 97%;
+    --kanban-new-border: 216 85% 85%;
+
+    --kanban-contact: 38 92% 50%;      /* laranja para contato feito */
+    --kanban-contact-bg: 38 92% 96%;
+    --kanban-contact-border: 38 92% 85%;
+
+    --kanban-proposal: 271 76% 53%;    /* roxo para proposta */
+    --kanban-proposal-bg: 271 76% 97%;
+    --kanban-proposal-border: 271 76% 85%;
+
+    --kanban-negotiation: 25 95% 53%; /* laranja escuro para negociação */
+    --kanban-negotiation-bg: 25 95% 96%;
+    --kanban-negotiation-border: 25 95% 85%;
+
+    --kanban-won: 142 76% 40%;         /* verde para ganhos */
+    --kanban-won-bg: 142 76% 96%;
+    --kanban-won-border: 142 76% 85%;
+
+    --kanban-lost: 0 84% 60%;          /* vermelho para perdidos */
+    --kanban-lost-bg: 0 100% 97%;
+    --kanban-lost-border: 0 84% 85%;
+
     /* Espaçamentos responsivos */
     --spacing-xs: 0.25rem;    /* 4px */
     --spacing-sm: 0.5rem;     /* 8px */
@@ -149,6 +174,31 @@
     --info: 200 98% 60%;
     --info-foreground: 0 0% 100%;
     --info-light: 200 98% 8%;
+
+    /* Cores específicas do Kanban - Tema Escuro */
+    --kanban-new: 216 87% 65%;         /* azul mais brilhante no dark */
+    --kanban-new-bg: 216 100% 8%;
+    --kanban-new-border: 216 87% 25%;
+
+    --kanban-contact: 38 92% 55%;      /* laranja suavizado */
+    --kanban-contact-bg: 38 92% 8%;
+    --kanban-contact-border: 38 92% 25%;
+
+    --kanban-proposal: 271 76% 60%;    /* roxo mais claro no dark */
+    --kanban-proposal-bg: 271 76% 8%;
+    --kanban-proposal-border: 271 76% 25%;
+
+    --kanban-negotiation: 25 95% 58%;  /* laranja mais vibrante */
+    --kanban-negotiation-bg: 25 95% 8%;
+    --kanban-negotiation-border: 25 95% 25%;
+
+    --kanban-won: 142 76% 45%;         /* verde mais suave */
+    --kanban-won-bg: 142 76% 8%;
+    --kanban-won-border: 142 76% 25%;
+
+    --kanban-lost: 0 63% 65%;          /* vermelho suavizado */
+    --kanban-lost-bg: 0 100% 8%;
+    --kanban-lost-border: 0 63% 25%;
 
     /* Sidebar dark moderna */
     --sidebar-background: 224 71% 3%;
@@ -444,6 +494,53 @@
 
   .chat-bubble-bot {
     @apply chat-bubble bg-muted text-muted-foreground;
+  }
+
+  /* Kanban styles - Funil de vendas aprimorado */
+  .kanban-card {
+    @apply bg-card border border-border rounded-lg p-3 shadow-sm;
+    @apply transition-all duration-200 hover:shadow-md hover:scale-[1.02];
+    @apply cursor-grab active:cursor-grabbing;
+  }
+
+  .kanban-card:hover {
+    transform: translateY(-2px);
+  }
+
+  .kanban-column {
+    @apply min-h-32 rounded-lg border-2;
+    @apply transition-all duration-300 ease-in-out;
+    @apply backdrop-blur-sm;
+  }
+
+  .kanban-column.dragging-over {
+    @apply ring-2 ring-primary ring-opacity-50 shadow-lg scale-105;
+    @apply border-primary;
+  }
+
+  /* Colunas específicas do Kanban com cores semânticas */
+  .kanban-column-new {
+    @apply bg-kanban-new-bg border-kanban-new-border text-kanban-new;
+  }
+
+  .kanban-column-contact {
+    @apply bg-kanban-contact-bg border-kanban-contact-border text-kanban-contact;
+  }
+
+  .kanban-column-proposal {
+    @apply bg-kanban-proposal-bg border-kanban-proposal-border text-kanban-proposal;
+  }
+
+  .kanban-column-negotiation {
+    @apply bg-kanban-negotiation-bg border-kanban-negotiation-border text-kanban-negotiation;
+  }
+
+  .kanban-column-won {
+    @apply bg-kanban-won-bg border-kanban-won-border text-kanban-won;
+  }
+
+  .kanban-column-lost {
+    @apply bg-kanban-lost-bg border-kanban-lost-border text-kanban-lost;
   }
 
   /* Mobile-first responsive utilities */
